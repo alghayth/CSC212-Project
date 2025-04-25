@@ -38,7 +38,7 @@ public class InvAlbum {
         public LinkedList<Photo> getPhotos()
         {
             BST<LinkedList<Photo>> photosBST = invmanager.getPhotos();
-            LinkedList<Photo> Rphotos = new LinkedList<Photo>();
+            LinkedList<Photo> Myphotos = new LinkedList<Photo>();
             NbComps =0 ;
             String [] tags;
             
@@ -58,26 +58,26 @@ public class InvAlbum {
                         miniTag.findFirst();
                         while ( ! miniTag.last())
                         {
-                            Rphotos.insert(miniTag.retrieve());
+                            Myphotos.insert(miniTag.retrieve());
                             miniTag.findNext();
                         }
-                        Rphotos.insert(miniTag.retrieve());
+                        Myphotos.insert(miniTag.retrieve());
                     }
                     else
                     {
                         if (condition.compareToIgnoreCase("") != 0 )
-                             Rphotos  = Function1 ( Rphotos , photosBST.retrieve());
+                             Myphotos  = Function1 ( Myphotos , photosBST.retrieve());
                         else
-                            Rphotos  = Function2 ( Rphotos , photosBST.retrieve());    
+                            Myphotos  = Function2 ( Myphotos , photosBST.retrieve());    
                     }
                 }
                 else
                 {
-                    Rphotos = new LinkedList<Photo>();
+                    Myphotos = new LinkedList<Photo>();
                     break;
                 }
             }
-            return Rphotos;
+            return Myphotos;
         }
        
         // Return the number of tag comparisons used to find all photos of the album

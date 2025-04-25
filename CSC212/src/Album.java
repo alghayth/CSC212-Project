@@ -44,7 +44,7 @@ public class Album {
                         photos1.findFirst();
                         while (! photos1.last())
                         {
-                        	 Myphotos.insert(new Photo(photos1.retrieve().getPath(), photos1.retrieve().getTags()));
+                        	Myphotos.insert(new Photo(photos1.retrieve().getPath(), photos1.retrieve().getTags()));
                             photos1.findNext();
                         }
                         Myphotos.insert(new Photo(photos1.retrieve().getPath(), photos1.retrieve().getTags()));
@@ -60,14 +60,14 @@ public class Album {
                     while ( !  Myphotos.last())
                     {
                         Photo photo = Myphotos.retrieve();
-                        //System.out.println("test " + photo.getPath());
+                        System.out.println("test " + photo.getPath());
                         if ( ! allAvilable (photo.allTags , Array ))
                         	 Myphotos.remove();
                         else
                         	 Myphotos.findNext();
                     }
                     Photo photo11 =  Myphotos.retrieve();
-                    //System.out.println("testlast " + photo11.getPath());
+                    System.out.println("testlast " + photo11.getPath());
                     if ( ! allAvilable (photo11.allTags , Array ))
                     	 Myphotos.remove();
                     else
@@ -98,7 +98,7 @@ public class Album {
                     while (!AllTags.last())
                     {
                         this.NbComps ++ ;    
-                        //System.out.println(AllTags.retrieve() + " " + Array[i]);
+                        System.out.println(AllTags.retrieve() + " " + Array[i]);
                         if (AllTags.retrieve().compareToIgnoreCase(Array[i]) == 0)
                         {
                             found_in_tags = true;
@@ -109,7 +109,7 @@ public class Album {
                     if (! found_in_tags )
                     {
                         this.NbComps ++ ;
-                        //System.out.println(AllTags.retrieve() + " " + Array[i]);
+                        System.out.println(AllTags.retrieve() + " " + Array[i]);
                         if (AllTags.retrieve().compareToIgnoreCase(Array[i]) == 0)
                             found_in_tags = true;
                     }
